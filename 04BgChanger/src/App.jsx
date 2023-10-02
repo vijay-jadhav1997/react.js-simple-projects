@@ -8,6 +8,8 @@ function App() {
     <div className='fixed flex align-top top-0 right-0 bottom-0 left-0 duration-200'
       style={{backgroundColor: color}}
     >
+      <h1 className='rounded-md bg-white fixed top-3 right-5 left-5  py-4 text-center px-4 font-sans font-bold  '
+      >Set Background Color as buttons color just hitting that button </h1>
       <div className="absolute flex flex-wrap justify-center gap-3 left-2 right-2 top-20  p-5 bg-white rounded-xl">
         <button
           onClick={() => setColor('black')}
