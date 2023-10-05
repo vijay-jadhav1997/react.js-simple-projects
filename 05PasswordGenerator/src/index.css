@@ -3,15 +3,7 @@
 @tailwind utilities;
 
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-}
 body {
-  background-color: black;
+  background: linear-gradient(60deg, rgb(87, 127, 201), rgb(58, 190, 146), rgb(50, 112, 136));
 }

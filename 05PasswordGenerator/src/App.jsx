@@ -28,7 +28,10 @@ function App() {
     
   }, [length, numAllowwed, charAllowwed, setPassword])
 
-  const copyPasswordToClipbord = useCallback(() => {})
+  const copyPasswordToClipbord = useCallback(() => {
+    passwordRef.current?.select()
+    window.navigator.clipboard.writeText(password)
+  },[password])
   
   useEffect(()=> {
     passwordGenerator()
@@ -48,7 +51,7 @@ function App() {
             readOnly
             ref={passwordRef}
           />
-          <button className='outline-none py-0.5 px-3 bg-blue-700 text-white shrink-0'
+          <button className='outline-none py-0.5 px-3 bg-blue-700 text-white shrink-0 hover:opacity-0 '
             onClick={copyPasswordToClipbord}
           >
             copy
