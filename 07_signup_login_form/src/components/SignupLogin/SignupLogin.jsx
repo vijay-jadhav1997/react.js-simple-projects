@@ -8,7 +8,7 @@ import hidden from "../Assets/hidden.png";
 
 const SignupLogin = () => {
   const [action, setAction] = useState("sign up");
-  const [pswdIcon, setPswdIcon] = useState({ hidden });
+  const [pswdIcon, setPswdIcon] = useState(hidden);
   return (
     <div className="SignupLogin">
       <div className="header">
@@ -40,7 +40,11 @@ const SignupLogin = () => {
               pswdIcon === hidden ? setPswdIcon(eye) : setPswdIcon(hidden)
             }
           >
-            <img src={pswdIcon} alt="" />
+            {pswdIcon === hidden ? (
+              <img src={hidden} alt="" />
+            ) : (
+              <img src={eye} alt="" />
+            )}
           </div>
         </div>
         {action === "sign up" ? (
