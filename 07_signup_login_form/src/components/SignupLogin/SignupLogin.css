@@ -1,0 +1,90 @@
+.SignupLogin {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 40px 25px;
+  border-radius: 5px;
+}
+
+.header {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.header .title {
+  color: #04047e;
+}
+.header .underline {
+  background-color: #04047e;
+  width: 50px;
+  padding: 2px;
+  margin: 5px auto;
+  border-radius: 5px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+.inputs .input {
+  display: flex;
+  align-items: center;
+  background-color: #b2d6f9;
+  padding: 15px;
+  border-radius: 5px;
+  width: 350px;
+}
+.inputs .input img {
+  width: 20px;
+}
+.inputs .input input {
+  outline: none;
+  font-size: 1.2rem;
+  text-indent: 10px;
+  background-color: transparent;
+}
+.inputs .passwordBox {
+  position: relative;
+}
+.inputs .passwordBox .hide-show-icon {
+  position: absolute;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.inputs .passwordBox .hide-show-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.forgotPswdBox {
+  margin: 20px 0;
+}
+.forgotPswdBox .forgotPswd span {
+  color: #04047e;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.submitBtns-Container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px 0;
+}
+.submitBtns-Container button {
+  width: 160px;
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 18px;
+  background-color: #010172;
+  color: #fff;
+}
+.submitBtns-Container .gray {
+  background-color: rgb(228, 228, 228);
+  color: #000000;
+}
