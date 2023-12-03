@@ -8,7 +8,7 @@ const Task = ({ todoData }) => {
   return (
     <>
       <div className="relative px-4 pb-2 rounded-md bg-slate-500 my-2 flex items-center justify-between hover:bg-slate-600">
-        <div>
+        <div className="w-[80%]">
           <p className="top-[2px] left-[10%] mb-1 text-gray-300">
             <img src={clock} className="w-4 inline-block mr-1" alt="" />
             {dateTime?.todoDate} : {dateTime?.todoTime}

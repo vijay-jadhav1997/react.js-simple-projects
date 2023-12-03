@@ -69,7 +69,7 @@ const Todo = () => {
         </div>
       </div>
       <h2 className="my-5 text-center text-xl font-bold">💥 My Todos 💥</h2>
-      <div className="w-full border">
+      <div className="w-full">
         <div className="buttons my-3">
           <button className="px-3 py-1 hover:bg-green-500" type="button">
             Todo
