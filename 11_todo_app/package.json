@@ -1,0 +1,32 @@
+{
+  "name": "todo_app_with_react",
+  "version": "1.0.0",
+  "description": "Basic React app",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijay-jadhav1997/learn_react.git"
+  },
+  "keywords": [
+    "Todo app"
+  ],
+  "author": "Vijay Jadhav",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.2",
+    "postcss": "^8.4.31",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.3.5"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "react-router-dom": "^6.18.0"
+  }
+}
