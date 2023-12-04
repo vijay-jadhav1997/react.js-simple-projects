@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import clock from "../assets/clock.png";
 import bin from "../assets/bin.png";
-import correct from "../assets/correct.png";
+// import correct from "../assets/correct.png";
 // import Task from "./Task";
 
 const Todo = () => {
@@ -92,15 +92,9 @@ const Todo = () => {
           </button>
         </div>
       </div>
-      <h2 className="my-5 text-center text-xl font-bold">💥 My Todos 💥</h2>
       <div className="w-full">
-        <div className="buttons my-3">
-          <button className="px-3 py-1 hover:bg-green-500" type="button">
-            Todo
-          </button>
-          <button className="px-3 py-1 hover:bg-green-500" type="button">
-            Completed
-          </button>
+        <div className="my-3">
+          <h2 className="my-5 text-center text-xl font-bold">💥 My Todos 💥</h2>
         </div>
         <div className="todoList">
           {allTodos.map((todo) => {
@@ -111,7 +105,7 @@ const Todo = () => {
                 key={todo?.id}
                 className="relative px-4 pb-2 rounded-md bg-slate-500 my-2 flex items-center justify-between hover:bg-slate-600"
               >
-                <div className="w-[80%]">
+                <div className="w-[85%]">
                   <p className="top-[2px] left-[10%] mb-1 text-gray-300">
                     <img src={clock} className="w-4 inline-block mr-1" alt="" />
                     {dateTime?.todoDate} : {dateTime?.todoTime}
@@ -127,12 +121,6 @@ const Todo = () => {
                     }}
                     className="w-10 rounded-full hover:p-[2px] hover:text-white cursor-pointer"
                     src={bin}
-                    alt=""
-                  />
-                  <img
-                    title="mark task completed"
-                    className="w-10 rounded-full hover:p-[2px] hover:text-white cursor-pointer"
-                    src={correct}
                     alt=""
                   />
                 </div>
