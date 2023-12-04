@@ -5,6 +5,11 @@ import correct from "../assets/correct.png";
 
 const Task = ({ todoData }) => {
   const { title, description, dateTime } = todoData;
+
+  const deleteTodo = (e) => {
+    e.target;
+  };
+
   return (
     <>
       <div className="relative px-4 pb-2 rounded-md bg-slate-500 my-2 flex items-center justify-between hover:bg-slate-600">
@@ -19,6 +24,7 @@ const Task = ({ todoData }) => {
         <div className="icons flex gap-x-1 lg:gap-3 lg:pr-[20px]">
           <img
             title="delete task"
+            onClick={deleteTodo}
             className="w-10 rounded-full hover:p-[2px] hover:text-white cursor-pointer"
             src={bin}
             alt=""
