@@ -1,0 +1,110 @@
+.userCard {
+  width: 325px;
+  border-radius: 10px;
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 40px;
+  /* overflow: hidden; */
+  position: relative;
+}
+
+.gradient {
+  background-image: linear-gradient(#91baff, #205fff);
+  height: 120px;
+  border-radius: 10px 10px 0 0;
+}
+
+.userCard .styl1,
+.userCard .styl2,
+.userCard .styl3 {
+  position: absolute;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  border-radius: 50%;
+}
+
+.userCard .styl1 {
+  left: 30%;
+}
+.userCard .styl2 {
+  right: 50%;
+  transform: translate(50%);
+}
+.userCard .styl3 {
+  right: 30%;
+}
+
+.profileBox {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  width: 100%;
+}
+
+.profile_header {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.profile_header img {
+  border-radius: 50%;
+  border: 5px solid rgb(250, 156, 227);
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  margin-top: -75px;
+}
+.profile_header h2 {
+  margin: 5px 0;
+}
+
+.employee_details {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+.employee_details p {
+  padding: 2px 0;
+}
+.employee_details p span {
+  width: 80px;
+  display: inline-block;
+}
+
+.contactBtn {
+  margin: 20px auto 0;
+  width: 150px;
+  padding: 10px 0;
+  background-color: #205fff;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.contactBtn a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+.contactBtn:hover {
+  box-shadow: 0 0 10px #6a6aef;
+}
+.userCard .design1,
+.userCard .design2 {
+  position: absolute;
+  background-color: #2981d4;
+  width: 30px;
+  height: 45px;
+  bottom: 2px;
+  border-radius: 50%;
+}
+.userCard .design1 {
+  left: 2px;
+}
+.userCard .design2 {
+  right: 2px;
+}
