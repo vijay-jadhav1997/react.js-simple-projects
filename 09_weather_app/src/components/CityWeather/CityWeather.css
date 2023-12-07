@@ -1,6 +1,8 @@
-.ticTacToeContainer {
+.cityWeatherContainer {
+  height: 500px;
   padding: 10px 20px;
-  background-color: #60094c;
+  margin: auto;
+  background-color: #80d1f9;
   color: #fff;
   border-radius: 20px;
 }
