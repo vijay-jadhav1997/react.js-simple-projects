@@ -1,0 +1,8 @@
+.searchComponent {
+  padding: 5px 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+.searchComponent:hover {
+  background-color: #efefef;
+}
