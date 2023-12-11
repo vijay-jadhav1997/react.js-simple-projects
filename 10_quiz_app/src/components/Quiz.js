@@ -10,7 +10,6 @@ const Quiz = () => {
   const optionBtns = document.getElementsByClassName("optionBtn");
 
   const optionHandler = (e) => {
-    const nextBtn = document.querySelector("nextBtn");
     if (optionBtns.length - 3 === Questions[currentQuestion]?.answer) {
       optionBtns[0].classList.add("correctAns");
     } else {
