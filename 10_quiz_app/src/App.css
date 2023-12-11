@@ -22,8 +22,14 @@
   align-items: center;
   row-gap: 20px;
 }
-
+header {
+  width: 80%;
+}
 header h1 {
+  width: 100%;
+  max-width: 600px;
+  margin: 5px auto;
+  text-align: center;
   color: #fff;
   background-color: rgba(32, 31, 31, 0.454);
   padding: 10px 30px;
@@ -57,4 +63,73 @@ header h1 {
 .mainMenu button:hover {
   background-color: rgb(1, 182, 1);
   color: #fff;
+}
+
+.quiz {
+  background-color: rgba(250, 147, 243, 0.317);
+  border-radius: 10px;
+  height: max-content;
+  width: 80%;
+  max-width: 800px;
+  padding: 20px 10px;
+}
+
+.quiz .question {
+  color: #fffffff0;
+  padding: 20px 0;
+  margin: 10px auto 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.quiz .options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  padding-bottom: 10%;
+  border-bottom: 2px solid rgb(182, 180, 180);
+}
+.quiz .options button {
+  min-width: 300px;
+  width: 60%;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  background-color: #ffffffc5;
+  cursor: pointer;
+}
+.quiz .options button:hover {
+  box-shadow: 0 0 10px rgb(92, 251, 232);
+  background-color: #ffffffeb;
+  width: 70%;
+  max-width: 520px;
+}
+
+.quiz .buttonsBox {
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.quiz .buttonsBox button {
+  min-width: 100px;
+  width: 30%;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.quiz .buttonsBox button:hover {
+  box-shadow: 0 0 10px #02dfd8;
+}
+.quiz .buttonsBox .skipBtn {
+  color: #ffffff;
+  background-color: rgba(252, 69, 69, 0.619);
+}
+.quiz .buttonsBox .nextBtn {
+  color: #ffffff;
+  background-color: rgba(124, 247, 115, 0.694);
 }
