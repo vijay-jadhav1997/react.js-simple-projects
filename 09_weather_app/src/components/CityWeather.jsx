@@ -13,7 +13,7 @@ import { useEffect } from "react";
 const CityWeather = () => {
   const [cityWeather, setCityWeather] = useState({});
   const [cityUrl, setCityUrl] = useState("");
-  const [cityName, setCityName] = useState("");
+  const [cityName, setCityName] = useState("Pune");
 
   useEffect(() => {
     fetchCityData();
@@ -49,7 +49,7 @@ const CityWeather = () => {
   // let cityDataUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=Metric&appid=a73d68f9bcb2329ef697a7b1f304b10b`;
 
   return (
-    <div className="bg-cyan-900 text-white rounded-lg mx-auto mt-10 md:w-max w-[420px] px-5 md:py-10 py-5">
+    <div className="bg-cyan-900 text-white rounded-lg mx-auto mt-10 md:w-max w-[440px] px-5 md:py-10 py-5">
       <div className="search_bar flex justify-center mx-auto w-[90%] max-w-2xl">
         <input
           type="text"
@@ -75,7 +75,9 @@ const CityWeather = () => {
         <div className="weatherBox1 pb-5 mb-2 flex flex-wrap justify-center md:block">
           <div className="cityName flex items-center gap-x-2">
             <img className="w-5 inline" src={location} alt="" />
-            <span className="md:text-3xl text-2xl font-medium">{name}</span>
+            <span className="md:text-3xl text-2xl font-medium">
+              {name === undefined ? cityName : name}
+            </span>
           </div>
           <div className="date_time ml-10 md:mt-10 mt-5 text-xl">
             <p className="text-gray-300">September 15</p>
