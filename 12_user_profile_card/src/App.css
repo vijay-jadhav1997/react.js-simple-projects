@@ -1,5 +1,24 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+
+header h1 {
+  color: #fff;
+  margin: 10px 0 0;
+  padding: 10px 30px;
+  background-color: #f878e970;
+  border-radius: 50px;
+  box-shadow: 0 0 10px #fff;
+}
+
 .studentCard_container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px 10px;
   flex-wrap: wrap;
 }
