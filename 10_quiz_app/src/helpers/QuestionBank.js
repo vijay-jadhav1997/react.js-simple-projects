@@ -5,7 +5,7 @@ export const Questions = [
     optionB: "Shree_Ram",
     optionC: "Shree_Hari",
     optionD: "Shree_Vitthal",
-    answer: "B",
+    answer: 2,
   },
   {
     question: "Which the following is a nick name of 'Maharj Arjun' ?",
@@ -13,7 +13,7 @@ export const Questions = [
     optionB: "Dharmaraj",
     optionC: "Gopal",
     optionD: "Bhisma",
-    answer: "A",
+    answer: 1,
   },
   {
     question: "Name of the king of the Dwaraka?",
@@ -21,7 +21,7 @@ export const Questions = [
     optionB: "Shree_Balram",
     optionC: "Shree_Dhutarashtra",
     optionD: "Shree_Ugrasen",
-    answer: "D",
+    answer: 4,
   },
   {
     question: "The writer of 'Shree_Mahabharat' epic?",
@@ -29,7 +29,7 @@ export const Questions = [
     optionB: "Maharshi Vyas ji",
     optionC: "Maharshi Kapil ji",
     optionD: "Maharshi Vasishtha ji",
-    answer: "B",
+    answer: 2,
   },
   {
     question: "The writer of 'Shree_Ramayan' epic?",
@@ -37,7 +37,7 @@ export const Questions = [
     optionB: "Maharshi Vyas ji",
     optionC: "Maharshi Kapil ji",
     optionD: "Maharshi Vasishtha ji",
-    answer: "A",
+    answer: 1,
   },
   {
     question: "The ancient name of 'Bharat' ?",
@@ -45,7 +45,7 @@ export const Questions = [
     optionB: "India",
     optionC: "Aryavart/ Bharatvarsh",
     optionD: "Jambudweep",
-    answer: "C",
+    answer: 3,
   },
   {
     question: "the name of the sister of Shree_krushna & Shree_Balram ?",
@@ -53,7 +53,7 @@ export const Questions = [
     optionB: "Dusshala",
     optionC: "Subhadra",
     optionD: "Bhanumati",
-    answer: "C",
+    answer: 3,
   },
   {
     question: "the name of husband of Subhadra ?",
@@ -61,7 +61,7 @@ export const Questions = [
     optionB: "Maharaj Duryodhan",
     optionC: "Maharaj Yudhishthir",
     optionD: "Maharaj Bhim",
-    answer: "A",
+    answer: 1,
   },
   {
     question: "The name of the Bhishma Pitamah?",
@@ -69,6 +69,6 @@ export const Questions = [
     optionB: "Shree_Vasudev",
     optionC: "Shree_Dharmaraj",
     optionD: "Shree_Devavrat",
-    answer: "D",
+    answer: 4,
   },
 ];

@@ -37,7 +37,8 @@ header h1 {
   box-shadow: 0 0 10px #ffffff87;
 }
 
-.mainMenu {
+.mainMenu,
+.endScreen {
   max-width: 500px;
   width: 80%;
   height: 500px;
@@ -50,7 +51,8 @@ header h1 {
   background: #966ff85a;
 }
 
-.mainMenu button {
+.mainMenu button,
+.endScreen button {
   width: 250px;
   padding: 15px 30px;
   font-size: 1.3rem;
@@ -60,7 +62,8 @@ header h1 {
   transition: all 0.3sec;
   background-color: #ffffffae;
 }
-.mainMenu button:hover {
+.mainMenu button:hover,
+.endScreen button:hover {
   background-color: rgb(1, 182, 1);
   color: #fff;
 }
@@ -100,9 +103,16 @@ header h1 {
   background-color: #ffffffc5;
   cursor: pointer;
 }
+.quiz .options .wrongAns {
+  background-color: rgb(237, 95, 95);
+  box-shadow: 0 0 5px rgb(249, 56, 56);
+}
+.quiz .options .correctAns {
+  background-color: rgba(184, 253, 142, 0.801);
+  box-shadow: 0 0 5px rgb(2, 251, 64);
+}
 .quiz .options button:hover {
   box-shadow: 0 0 10px rgb(92, 251, 232);
-  background-color: #ffffffeb;
   width: 70%;
   max-width: 520px;
 }
@@ -115,7 +125,7 @@ header h1 {
   justify-content: space-between;
 }
 .quiz .buttonsBox button {
-  min-width: 100px;
+  min-width: 200px;
   width: 30%;
   font-size: 1.1rem;
   padding: 10px 20px;
@@ -127,9 +137,17 @@ header h1 {
 }
 .quiz .buttonsBox .skipBtn {
   color: #ffffff;
-  background-color: rgba(252, 69, 69, 0.619);
+  background-color: rgba(252, 151, 69, 0.619);
 }
 .quiz .buttonsBox .nextBtn {
   color: #ffffff;
   background-color: rgba(124, 247, 115, 0.694);
+}
+
+.endScreen {
+  color: #fff;
+  row-gap: 20px;
+}
+.endScreen button {
+  margin-top: 50px;
 }
