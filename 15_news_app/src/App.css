@@ -1,0 +1,6 @@
+.app {
+  background-color: rgba(6, 6, 67, 0.836);
+  padding-top: 20px;
+  min-height: 100svh;
+  width: 100svw;
+}

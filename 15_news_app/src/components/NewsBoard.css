@@ -1,0 +1,21 @@
+.newsBoard {
+  margin-top: 5px;
+}
+.newsBoard h2 {
+  padding: 5px 0;
+  text-align: center;
+  color: #ffefef;
+}
+.newsBoard h2 span {
+  background-color: rgb(205, 3, 3);
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+
+.newsCard_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
