@@ -1,17 +1,34 @@
+import latestNews from "../assets/latestNews.png";
 import "./NewsCard.css";
 
-const NewsCard = () => {
+const NewsCard = (props) => {
+  const {
+    source,
+    title,
+    author,
+    publishedAt,
+    content,
+    description,
+    url,
+    urlToImage,
+  } = props?.newsInfo;
   return (
     <div className="newsCard">
-      <img src="..." alt="..." />
+      <img
+        src={urlToImage === null || urlToImage === "" ? latestNews : urlToImage}
+        alt="..."
+      />
+      <span className="newsSource">{source?.name}</span>
       <div className="newsCard_body">
-        <h5 className="newsTitle">News Title</h5>
+        <p className="newsDate">{publishedAt.split("T")[0]}</p>
+        <h3 className="newsTitle">{title?.substring(0, 45) + "...."}</h3>
         <p className="newsDescription">
-          Here is a brief summary of current news. Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit. Ea, libero!
+          {description === null || description === ""
+            ? title?.substring(0, 90) + "...."
+            : description?.substring(0, 90) + "...."}
         </p>
-        <a href="/" className="newsArticle_Link">
-          Go to news Article
+        <a href={url} className="newsArticle_Link">
+          Read More...
         </a>
       </div>
     </div>
