@@ -1,7 +1,9 @@
 .navbar {
-  height: 80px;
+  width: 95%;
   background-color: #8181de;
   padding: 10px 20px;
+  margin: auto;
+  border-radius: 5px;
 }
 a {
   text-decoration: none;
@@ -11,6 +13,7 @@ a {
 .navContainer {
   display: flex;
   height: 100%;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -30,11 +33,14 @@ a {
 
 #navbarNav {
   margin-left: 50px;
+  width: 70%;
 }
 
 .navbar-nav {
   display: flex;
   align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
   column-gap: 10px;
 }
 .navbar-nav li {

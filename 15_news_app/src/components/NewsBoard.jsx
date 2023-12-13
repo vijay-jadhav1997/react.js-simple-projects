@@ -17,7 +17,7 @@ const NewsBoard = ({ category }) => {
       const response = await fetch(newsUrl);
       const newsData = await response.json();
       setArticles(newsData?.articles);
-      console.log(newsData?.articles);
+      // console.log(newsData?.articles);
     } catch (error) {
       console.log(error);
     }

@@ -25,7 +25,7 @@ const NewsCard = (props) => {
         <p className="newsDescription">
           {description === null || description === ""
             ? title?.substring(0, 90) + "...."
-            : description?.substring(0, 90) + "...."}
+            : description?.slice(0, 90) + "...."}
         </p>
         <a href={url} className="newsArticle_Link">
           Read More...
