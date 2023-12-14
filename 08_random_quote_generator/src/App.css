@@ -8,7 +8,7 @@
 .App {
   width: 100vw;
   height: 100vh;
-  padding: 20px;
+  padding: 30px 20px;
   background: linear-gradient(
     60deg,
     rgb(1, 54, 88),
@@ -16,30 +16,21 @@
     rgb(2, 48, 80),
     rgb(1, 1, 85)
   );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App header {
-  width: max-content;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 10px;
-}
-.App header img {
-  width: 125px;
-  height: 125px;
-  border-radius: 50%;
-  padding: 5px;
-  text-align: center;
-  box-shadow: 0 0 10px rgb(250, 190, 241);
+  padding: 10px 20px;
+  box-shadow: 0 0 10px rgb(247, 244, 119);
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .App header h1 {
-  background-color: #fff;
-  margin: 5px 0;
-  padding: 8px 20px;
-  box-shadow: 0 0 10px rgb(247, 244, 119);
+  /* margin: 5px 0; */
   text-shadow: -2px -2px 5px rgb(214, 29, 199);
-  border-radius: 10px;
+  text-align: center;
 }

@@ -1,4 +1,5 @@
 .randomQuoteBox {
+  min-width: 430px;
   max-width: 660px;
   margin: 70px auto;
   padding: 50px 30px 10px;
@@ -10,14 +11,21 @@
   align-items: center;
 }
 .randomQuoteBox .quote {
-  padding: 10px 20px 35px;
+  padding: 25px 20px;
   width: 100%;
-  border-bottom: 2px solid #656565;
+  border-radius: 3px;
   font-size: 24px;
   font-weight: 550;
   line-height: 34px;
   text-align: center;
 }
+.randomQuoteBox .underline {
+  border-radius: 3px;
+  padding: 2px;
+  width: 100%;
+  margin-top: 20px;
+}
+
 .randomQuoteBox .box {
   margin: 10px 0;
   padding: 10px 0;

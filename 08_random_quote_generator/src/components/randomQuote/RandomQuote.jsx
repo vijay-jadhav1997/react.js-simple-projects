@@ -8,6 +8,7 @@ const RandomQuote = () => {
     a: "APJ Abdul Kalam",
   });
   const [quotes, setQuotes] = useState([]);
+  const [colorCode, setColorCode] = useState("rgb(2, 159, 154)");
 
   useEffect(() => {
     fetchQuotes();
@@ -24,6 +25,19 @@ const RandomQuote = () => {
   const randomQuoteFn = () => {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     setQuote(randomQuote);
+    if (colorCode === "rgb(2, 159, 154)") {
+      setColorCode("rgb(125, 2, 159)");
+    } else if (colorCode === "rgb(125, 2, 159)") {
+      setColorCode("rgb(149, 159, 2)");
+    } else if (colorCode === "rgb(149, 159, 2)") {
+      setColorCode("rgb(181, 98, 3)");
+    } else if (colorCode === "rgb(181, 98, 3)") {
+      setColorCode("rgb(2, 68, 159)");
+    } else if (colorCode === "rgb(2, 68, 159)") {
+      setColorCode("rgb(111, 111, 111)");
+    } else {
+      setColorCode("rgb(2, 159, 154)");
+    }
   };
 
   const twitterFn = () => {
@@ -34,13 +48,23 @@ const RandomQuote = () => {
 
   return (
     <div className="randomQuoteBox">
-      <div className="quote">{quote.q}</div>
+      <div
+        className="quote"
+        style={{ boxShadow: `inset 0 0 15px ${colorCode}` }}
+      >
+        {quote.q}
+      </div>
+      <div
+        className="underline"
+        style={{ backgroundColor: ` ${colorCode}` }}
+      ></div>
       <div className="box">
         <div className="author">- {quote.a}</div>
         <div className="icons">
           <img
             src={refresh}
             alt=""
+            title="click to get another 'Quote'."
             onClick={() => {
               randomQuoteFn();
             }}
@@ -48,6 +72,7 @@ const RandomQuote = () => {
           <img
             src={twitter}
             alt=""
+            title="click to read this 'Quote' on Twitter!"
             onClick={() => {
               twitterFn();
             }}
