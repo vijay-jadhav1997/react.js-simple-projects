@@ -12,20 +12,19 @@ import { useEffect } from "react";
 
 const CityWeather = () => {
   const [cityWeather, setCityWeather] = useState({});
-  const [cityUrl, setCityUrl] = useState("");
+  const [cityUrl, setCityUrl] = useState(``);
   const [cityName, setCityName] = useState("Pune");
-
-  useEffect(() => {
-    fetchCityData();
-  }, [cityUrl]);
+  const [searchError, setSearhcError] = useState({});
 
   async function fetchCityData() {
     try {
       const cityData = await fetch(cityUrl);
       const jsonData = await cityData.json();
+      console.log(cityData);
       setCityWeather(jsonData);
-      // console.log(cityData);
+      console.log(jsonData);
     } catch (error) {
+      setSearhcError(error);
       console.log(error);
     }
   }
@@ -36,17 +35,20 @@ const CityWeather = () => {
       cityName.substring(1, cityName.length).toLowerCase();
     // console.log(cityNameOk);
     setCityUrl(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityNameOk}&units=Metric&appid=a73d68f9bcb2329ef697a7b1f304b10b`
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityNameOk}&units=Metric&appid=${
+        import.meta.env.VITE_API_KEY
+      }`
     );
     fetchCityData();
   };
 
-  console.log(cityWeather);
+  // console.log(cityWeather);
+  console.log(cityUrl);
+  useEffect(() => {
+    fetchCityData();
+  }, [cityUrl]);
 
   const { name, sys, weather, wind, main } = cityWeather;
-
-  // let api_key = "a73d68f9bcb2329ef697a7b1f304b10b";
-  // let cityDataUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=Metric&appid=a73d68f9bcb2329ef697a7b1f304b10b`;
 
   return (
     <div className="bg-cyan-900 text-white rounded-lg mx-auto mt-10 md:w-max w-[440px] px-5 md:py-10 py-5">
@@ -71,67 +73,77 @@ const CityWeather = () => {
           <img src={search} alt="" className="w-5" />
         </button>
       </div>
-      <div className="cityWeather md:mt-10 mt-3 flex flex-col md:flex-row items-center">
-        <div className="weatherBox1 pb-5 mb-2 flex flex-wrap justify-center md:block">
-          <div className="cityName flex items-center gap-x-2">
-            <img className="w-5 inline" src={location} alt="" />
-            <span className="md:text-3xl text-2xl font-medium">
-              {name === undefined ? cityName : name}
-            </span>
+      {searchError ? (
+        <div className="fetchError my-2 py-2 text-red-500 bg-gray-200 rounded-md ">
+          Their is network issue, check your network connection!{" "}
+          {searchError?.net}
+        </div>
+      ) : (
+        ""
+      )}
+      {
+        <div className="cityWeather md:mt-10 mt-3 flex flex-col md:flex-row items-center">
+          <div className="weatherBox1 pb-5 mb-2 flex flex-wrap justify-center md:block">
+            <div className="cityName flex items-center gap-x-2">
+              <img className="w-5 inline" src={location} alt="" />
+              <span className="md:text-3xl text-2xl font-medium">{name}</span>
+            </div>
+            <div className="date_time ml-10 md:mt-10 mt-5 text-xl">
+              <p className="text-gray-300">September 15</p>
+              <p className="text-gray-300">Monday</p>
+            </div>
+            <div className="temperatureBox flex md:mt-10 mt-5">
+              <img className="w-14 h-12" src={temperature} alt="" />
+              <div className="temp ml-2">
+                <p className="text-5xl font-semibold">
+                  {Math.round(main?.temp)}° C
+                </p>
+                <p className="text-gray-200 mt-2 text-lg font-medium">
+                  Feels like {Math.round(main?.feels_like)}° C
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="date_time ml-10 md:mt-10 mt-5 text-xl">
-            <p className="text-gray-300">September 15</p>
-            <p className="text-gray-300">Monday</p>
+          <div className="weatherBox2 px-2">
+            <img className="md:w-56 w-36" src={cloudy} alt="weather image" />
+            <p className="text-lg mt-3 text-center py-2 font-semibold">
+              Cloudy
+            </p>
           </div>
-          <div className="temperatureBox flex md:mt-10 mt-5">
-            <img className="w-14 h-12" src={temperature} alt="" />
-            <div className="temp ml-2">
-              <p className="text-5xl font-semibold">
-                {Math.round(main?.temp)}° C
+          <div className="weatherBox3 px-2 md:py-5 pb-2 md:ml-8 md:flex-col flex  flex-wrap gap-x-8">
+            <div className="sunrise my-1 py-1 px-1">
+              <img className="w-8 h-6 inline" src={sunrise} alt="" />
+              <p className="inline-block ml-3 text-lg text-gray-300">
+                sunrise {sys?.sunrise}
               </p>
-              <p className="text-gray-200 mt-2 text-lg font-medium">
-                Feels like {Math.round(main?.feels_like)}° C
+            </div>
+            <div className="sunset my-1 py-[2px] px-1">
+              <img className="w-8 h-6 inline" src={sunset} alt="" />
+              <p className="inline-block ml-3 text-lg text-gray-300">
+                sunset {sys?.sunset}
+              </p>
+            </div>
+            <div className="humidity my-1 py-[2px] px-1">
+              <img className="w-8 h-6 inline" src={humidity} alt="" />
+              <p className="inline-block ml-3 text-lg text-gray-300">
+                {main?.humidity}% Humidity
+              </p>
+            </div>
+            <div className="windSpeed my-1 py-[2px] px-1">
+              <img className="w-8 h-6 inline" src={windy} alt="" />
+              <p className="inline-block ml-3 text-lg text-gray-300">
+                {wind?.speed} km/h Wind
+              </p>
+            </div>
+            <div className="pressure my-1 py-[2px] px-1">
+              <img className="w-8 h-6 inline" src={pressure} alt="" />
+              <p className="inline-block ml-3 text-lg text-gray-300">
+                {main?.pressure} mb pressure
               </p>
             </div>
           </div>
         </div>
-        <div className="weatherBox2 px-2">
-          <img className="md:w-56 w-36" src={cloudy} alt="weather image" />
-          <p className="text-lg mt-3 text-center py-2 font-semibold">Cloudy</p>
-        </div>
-        <div className="weatherBox3 px-2 md:py-5 pb-2 md:ml-8 md:flex-col flex  flex-wrap gap-x-8">
-          <div className="sunrise my-1 py-1 px-1">
-            <img className="w-8 h-6 inline" src={sunrise} alt="" />
-            <p className="inline-block ml-3 text-lg text-gray-300">
-              sunrise {sys?.sunrise}
-            </p>
-          </div>
-          <div className="sunset my-1 py-[2px] px-1">
-            <img className="w-8 h-6 inline" src={sunset} alt="" />
-            <p className="inline-block ml-3 text-lg text-gray-300">
-              sunset {sys?.sunset}
-            </p>
-          </div>
-          <div className="humidity my-1 py-[2px] px-1">
-            <img className="w-8 h-6 inline" src={humidity} alt="" />
-            <p className="inline-block ml-3 text-lg text-gray-300">
-              {main?.humidity}% Humidity
-            </p>
-          </div>
-          <div className="windSpeed my-1 py-[2px] px-1">
-            <img className="w-8 h-6 inline" src={windy} alt="" />
-            <p className="inline-block ml-3 text-lg text-gray-300">
-              {wind?.speed} km/h Wind
-            </p>
-          </div>
-          <div className="pressure my-1 py-[2px] px-1">
-            <img className="w-8 h-6 inline" src={pressure} alt="" />
-            <p className="inline-block ml-3 text-lg text-gray-300">
-              {main?.pressure} mb pressure
-            </p>
-          </div>
-        </div>
-      </div>
+      }
     </div>
   );
 };
