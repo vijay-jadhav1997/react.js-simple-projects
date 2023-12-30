@@ -9,6 +9,8 @@ const NewsBoard = ({ category }) => {
     fetchNewsData();
   }, [category]);
 
+  // Link where from we got News API url & key => https://newsapi.org/docs/endpoints/top-headlines
+
   const fetchNewsData = async () => {
     try {
       let newsUrl = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${
