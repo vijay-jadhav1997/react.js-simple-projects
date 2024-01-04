@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import Body from "./components/Body";
+import Header from "./components/Header";
+import { ThemeProvider } from "./contexts/themeContexts";
+// import useTheme from "./contexts/themeContexts";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [theme, setTheme] = useState("light-theme");
+
+  function darkTheme() {
+    setTheme("dark-theme");
+  }
+  function lightTheme() {
+    setTheme("light-theme");
+  }
+
+  useEffect(() => {
+    document.getElementsByTagName("body")[0].className = theme;
+  }, [theme]);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ThemeProvider value={{ theme, setTheme, darkTheme, lightTheme }}>
+      <div className="app">
+        light/Dark Mode Toggle Button on any website using React.js by
+        ThapaTechnical.
+        <Header />
+        <Body />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
