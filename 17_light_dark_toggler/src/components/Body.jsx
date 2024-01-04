@@ -1,7 +1,19 @@
 // import React from 'react'
+import useTheme from "../contexts/themeContexts";
 import student from "../assets/students.jpg";
 
 function Body() {
+  const { theme, darkTheme, lightTheme } = useTheme();
+  function themeToggler() {
+    theme === "light-theme" ? darkTheme() : lightTheme();
+
+    // if (theme === "light-theme") {
+    //   darkTheme();
+    // } else {
+    //   lightTheme();
+    // }
+  }
+
   return (
     <div className="body">
       <div className="content">
@@ -11,7 +23,7 @@ function Body() {
           recusandae laudantium corrupti iste eligendi amet adipisci quibusdam
           explicabo harum minima!
         </p>
-        <button>Toggle Mode</button>
+        <button onClick={themeToggler}>Toggle Mode</button>
       </div>
       <div className="dp">
         <img src={student} alt="students studying image" />

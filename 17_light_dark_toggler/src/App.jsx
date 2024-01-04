@@ -20,10 +20,8 @@ function App() {
   }, [theme]);
 
   return (
-    <ThemeProvider value={{ theme, setTheme, darkTheme, lightTheme }}>
+    <ThemeProvider value={{ theme, darkTheme, lightTheme }}>
       <div className="app">
-        light/Dark Mode Toggle Button on any website using React.js by
-        ThapaTechnical.
         <Header />
         <Body />
       </div>
