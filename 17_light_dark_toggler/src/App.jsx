@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Body from "./components/Body";
 import Header from "./components/Header";
+import TogglerBtn from "./components/TogglerBtn";
 import { ThemeProvider } from "./contexts/themeContexts";
 // import useTheme from "./contexts/themeContexts";
 
@@ -14,15 +15,21 @@ function App() {
   function lightTheme() {
     setTheme("light-theme");
   }
+  function themeToggler() {
+    theme === "light-theme" ? darkTheme() : lightTheme();
+  }
 
   useEffect(() => {
-    document.getElementsByTagName("body")[0].className = theme;
+    document.body.className = theme;
   }, [theme]);
 
   return (
-    <ThemeProvider value={{ theme, darkTheme, lightTheme }}>
+    <ThemeProvider value={{ theme, darkTheme, lightTheme, themeToggler }}>
       <div className="app">
         <Header />
+        <TogglerBtn />
+        <Body />
+        <Body />
         <Body />
       </div>
     </ThemeProvider>

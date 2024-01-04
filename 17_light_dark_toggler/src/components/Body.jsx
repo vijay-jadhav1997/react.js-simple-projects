@@ -3,16 +3,7 @@ import useTheme from "../contexts/themeContexts";
 import student from "../assets/students.jpg";
 
 function Body() {
-  const { theme, darkTheme, lightTheme } = useTheme();
-  function themeToggler() {
-    theme === "light-theme" ? darkTheme() : lightTheme();
-
-    // if (theme === "light-theme") {
-    //   darkTheme();
-    // } else {
-    //   lightTheme();
-    // }
-  }
+  const { themeToggler } = useTheme();
 
   return (
     <div className="body">

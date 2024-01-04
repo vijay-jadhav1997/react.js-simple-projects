@@ -14,6 +14,9 @@
   --btn-text-clr: #fff;
   --bg-clr: rgb(6, 17, 45);
   --boxShadow-clr: #f8f8f8;
+  --left-distnc: 25px;
+  --toggleBtn-bg-clr: #07cf03;
+  --toggleBtn-clr: rgb(253, 253, 253);
 }
 .light-theme {
   --main-heading: #092e45;
@@ -21,13 +24,20 @@
   --btn-bg-color: #05b583;
   --btn-text-clr: #fff;
   --bg-clr: rgb(223, 230, 247);
-  --boxShadow-clr: #f05afe;
+  --boxShadow-clr: #f694fe;
+  --left-distnc: 5px;
+  --toggleBtn-bg-clr: #ededed;
+  --toggleBtn-clr: rgb(192, 192, 192);
 }
 
 body {
-  height: 100vh;
   width: 100vw;
   background-color: var(--bg-clr);
+  position: relative;
+}
+
+#root {
+  width: 100%;
 }
 
 .header {
@@ -66,11 +76,51 @@ body {
   border-radius: 40px;
 }
 
+.btnContainer {
+  padding: 10px;
+  border-radius: 5px;
+  width: 175px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 5%;
+  top: 110px;
+}
+.btnContainer .darkMode {
+  padding: 5px 10px;
+  width: max-content;
+  color: var(--para-clr);
+}
+.btnContainer .toggleBtn {
+  border: 1px solid #a8a8a8;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: var(--toggleBtn-bg-clr);
+  width: 55px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.btnContainer .toggleBtn .toggler {
+  background-color: var(--toggleBtn-clr);
+  border-radius: 15px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  left: var(--left-distnc);
+  font-size: small;
+  text-align: center;
+  padding: 2px 0 0;
+}
+
 .body {
   box-shadow: 0 0 10px var(--boxShadow-clr);
   width: 95%;
   height: 500px;
-  margin: 20px auto 0;
+  margin: 80px auto 0;
   border-radius: 5px;
   display: flex;
   justify-content: space-evenly;
