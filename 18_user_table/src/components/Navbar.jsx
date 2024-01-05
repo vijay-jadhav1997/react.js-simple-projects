@@ -2,14 +2,15 @@
 
 function Navbar() {
   return (
-    <div>
-      <p>Welcome, to learn Redux Toolkit with React</p>
-      <h1>ADMIN TABLE</h1>
+    <div className="navbar">
+      <p>✨ Welcome, to learn Redux Toolkit with React...!</p>
+      <h1 className="heading">: ADMIN TABLE :</h1>
       <p>
-        Redux Toolkit : A solution to manage global state and store date
-        globally, to make it available to every component of our react app.
+        Redux Toolkit : A solution to manage global state and store data
+        globally, to make it available to every required component of our react
+        app.
       </p>
-      <div className="navbar">
+      <div className="navbar-nav">
         <div>HOME</div>
         <div>ABOUT</div>
         <div>PROJECTS</div>
