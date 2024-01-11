@@ -1,22 +1,15 @@
 import { useEffect, useState } from "react";
 import Product from "../components/Product";
+import { fetchProducts } from "../appStore/slices/productSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 function Home() {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  const dispatch = useDispatch();
+  const { data: products, status } = useSelector((store) => store.products);
 
-  async function fetchProducts() {
-    try {
-      const response = await fetch("https://fakestoreapi.com/products");
-      const productsData = await response.json();
-      // console.log(productsData);
-      setProducts(productsData);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
 
   return (
     <div className="home">
