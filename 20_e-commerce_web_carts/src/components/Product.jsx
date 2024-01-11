@@ -1,13 +1,13 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../appStore/slices/cartSlice";
 
-function Product(props) {
+function Product({ productInfo }) {
   const dispatch = useDispatch();
 
-  const { title, description, image, price, rating } = props?.productInfo;
+  const { title, image, price, rating } = productInfo;
 
-  function handleAddItem() {
-    dispatch(addItem());
+  function handleAddItem(item) {
+    dispatch(addItem(item));
   }
 
   return (
@@ -17,7 +17,7 @@ function Product(props) {
       <div className="priceBox">
         <h4>$ {price}/-</h4> <h4>{rating?.rate}⭐</h4>
       </div>
-      <button className="addBtn" onClick={handleAddItem}>
+      <button className="addBtn" onClick={() => handleAddItem(productInfo)}>
         Add to cart
       </button>
     </div>

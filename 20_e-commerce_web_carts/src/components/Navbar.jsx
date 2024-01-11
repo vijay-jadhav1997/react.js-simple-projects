@@ -10,7 +10,7 @@ const Navbar = () => {
         <Link className="navLink" to={"/"}>
           Home
         </Link>
-        <Link className="navLink" to={"/"}>
+        <Link className="navLink" to={"/cart"}>
           Cart
         </Link>
         <span>items({items.length})</span>
