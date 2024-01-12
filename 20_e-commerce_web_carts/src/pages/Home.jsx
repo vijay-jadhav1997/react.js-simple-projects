@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Product from "../components/Product";
 import { fetchProducts } from "../appStore/slices/productSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -10,6 +10,14 @@ function Home() {
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
+
+  if (products.length === 0) {
+    return (
+      <div className="home">
+        <h2>{status}</h2>
+      </div>
+    );
+  }
 
   return (
     <div className="home">

@@ -49,6 +49,9 @@ body {
   background-color: #88cecc;
   margin-top: 110px;
 }
+.home h2 {
+  padding: 20px;
+}
 .pruductsContainer {
   margin: 10px auto 0;
   padding: 20px;
