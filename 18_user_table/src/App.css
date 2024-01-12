@@ -9,9 +9,8 @@
 
 #root {
   width: 100vw;
-  height: 100vh;
   padding: 20px;
-  background-color: rgb(5, 5, 41);
+  background-color: #11115d;
   color: #fff;
 }
 
@@ -31,17 +30,80 @@
   font-size: 50px;
   line-height: 65px;
   padding: 10px 20px;
-  color: rgb(158, 158, 158);
+  color: #9e9e9e;
 }
 .navbar .navbar-nav {
   display: flex;
   justify-content: space-between;
   /* flex-wrap: wrap; */
-  background-color: rgb(231, 231, 231);
+  background-color: #affdfdd0;
   margin: 30px 0 0;
   border-radius: 5px;
   width: 100%;
   line-height: 65px;
   padding: 10px 20px;
-  color: rgb(2, 22, 74);
+  color: #02164a;
+}
+
+.content {
+  padding: 10px;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: #fd9cf96c;
+  border-radius: 5px;
+}
+
+.content .admin-table {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 10px;
+}
+.admin-table .admin-subtitle {
+  font-size: 1.4rem;
+}
+.admin-table .addBtn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: linear-gradient(130deg, #3679f7, rgb(85, 2, 137));
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.admin-table .addBtn:hover {
+  opacity: 0.7;
+  text-shadow: -2px -2px 3px #cdaa00;
+}
+.admin-table .addBtn:active {
+  box-shadow: 0 0 10px #d52fff;
+}
+
+.content ul {
+  width: 100%;
+}
+.content ul li {
+  list-style: none;
+  padding: 5px 20px;
+}
+
+.content .deleteAllBtn-box {
+  padding: 10px 0;
+  text-align: end;
+}
+.deleteAllBtn-box .deleteAllBtn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: linear-gradient(160deg, #de2606, #daa520);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.deleteAllBtn-box .deleteAllBtn:hover {
+  opacity: 0.8;
+}
+.deleteAllBtn-box .deleteAllBtn:active {
+  box-shadow: 0 0 10px yellowgreen;
 }
