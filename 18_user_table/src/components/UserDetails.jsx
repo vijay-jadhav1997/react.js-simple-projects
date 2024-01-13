@@ -2,6 +2,7 @@ import { addUser } from "../store/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import DeleteAllUser from "./DeleteAllUser";
 import { fakeUserData } from "../api";
+import { MdDeleteForever } from "react-icons/md";
 
 function UserDetails() {
   const dispatch = useDispatch();
@@ -23,7 +24,9 @@ function UserDetails() {
       </div>
       <ul>
         {users.map((user) => (
-          <li key={user}>{user}</li>
+          <li key={user} className="userDetails">
+            {user} <MdDeleteForever className="deleteBtnIcon" />
+          </li>
         ))}
       </ul>
       <hr

@@ -87,7 +87,19 @@
 }
 .content ul li {
   list-style: none;
-  padding: 5px 20px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #ed9afc83;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+.content ul li .deleteBtnIcon {
+  color: #e80505;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .content .deleteAllBtn-box {
@@ -105,5 +117,5 @@
   opacity: 0.8;
 }
 .deleteAllBtn-box .deleteAllBtn:active {
-  box-shadow: 0 0 10px yellowgreen;
+  box-shadow: 0 0 10px #9acd32;
 }
