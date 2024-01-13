@@ -9,6 +9,7 @@
 
 #root {
   width: 100vw;
+  min-height: 100vh;
   padding: 20px;
   background-color: #11115d;
   color: #fff;

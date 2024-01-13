@@ -1,4 +1,4 @@
-import { addUser } from "../store/slices/userSlice";
+import { addUser, removeUser } from "../store/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import DeleteAllUser from "./DeleteAllUser";
 import { fakeUserData } from "../api";
@@ -11,7 +11,7 @@ function UserDetails() {
 
   const addNewUser = (name) => {
     dispatch(addUser(name));
-    console.log(name);
+    // console.log(name);
   };
 
   return (
@@ -25,7 +25,11 @@ function UserDetails() {
       <ul>
         {users.map((user) => (
           <li key={user} className="userDetails">
-            {user} <MdDeleteForever className="deleteBtnIcon" />
+            {user}{" "}
+            <MdDeleteForever
+              className="deleteBtnIcon"
+              onClick={() => dispatch(removeUser(user))}
+            />
           </li>
         ))}
       </ul>
