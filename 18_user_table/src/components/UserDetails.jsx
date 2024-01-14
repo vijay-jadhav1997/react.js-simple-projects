@@ -23,12 +23,12 @@ function UserDetails() {
         </button>
       </div>
       <ul>
-        {users.map((user) => (
+        {users.map((user, index) => (
           <li key={user} className="userDetails">
             {user}{" "}
             <MdDeleteForever
               className="deleteBtnIcon"
-              onClick={() => dispatch(removeUser(user))}
+              onClick={() => dispatch(removeUser(index))}
             />
           </li>
         ))}

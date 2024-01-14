@@ -10,12 +10,14 @@ const userSlice = createSlice({
       state.users.push(action.payload);
     },
     removeUser: function (state, action) {
-      return {
-        users: state.users.filter((user) => user !== action.payload),
-      };
+      state.users.splice(action.payload, 1);
+      // return {
+      //   users: state.users.filter((user) => user !== action.payload),
+      // };
     },
-    clearAllUsers: () => {
-      return { users: [] };
+    clearAllUsers: (state) => {
+      state.users.length = 0;
+      // return { users: [] };
     },
   },
 });
