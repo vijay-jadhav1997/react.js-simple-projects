@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useTodo from "../contexts/todoContext";
+import { useTodo } from "../contexts/todoContext";
 
 const TodoForm = () => {
   const [todoTitle, setTodoTitle] = useState("");
@@ -16,7 +16,10 @@ const TodoForm = () => {
   };
 
   return (
-    <form onSubmit={addTodoHandler} className="flex ">
+    <form
+      onSubmit={addTodoHandler}
+      className="flex justify-between w-[80%] max-w-[600px] "
+    >
       <input
         type="text"
         className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
@@ -27,7 +30,9 @@ const TodoForm = () => {
       <button
         type="submit"
         className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0"
-      ></button>
+      >
+        Add Todo
+      </button>
     </form>
   );
 };
