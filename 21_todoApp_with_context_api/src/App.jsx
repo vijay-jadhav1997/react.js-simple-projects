@@ -1,10 +1,8 @@
 import reactLogo from "./assets/react.svg";
 import { useEffect, useState } from "react";
 import "./App.css";
-import { ThemeProvider } from "./contexts/themeContext";
-import { TodoProvider } from "./contexts";
-import { TodoForm, TodoItem } from "./components/index";
-import ThemeToggler from "./components/ThemeToggler";
+import { TodoProvider, ThemeProvider } from "./contexts";
+import { TodoForm, TodoItem, ThemeToggler } from "./components";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -67,7 +65,7 @@ function App() {
       }}
     >
       <ThemeProvider value={{ toggleDarkTheme, themeMode }}>
-        <div className="app  relative min-h-screen flex flex-col gap-y-10 items-center py-16 dark:bg-slate-500">
+        <div className="app  relative min-h-screen flex flex-col gap-y-10 items-center py-20 dark:bg-slate-500">
           <ThemeToggler />
           <h1 className="bg-yellow-200 w-[85%] max-w-[700px] rounded-md shadow-inner shadow-pink-500 py-5 text-3xl font-bold text-center px">
             💥 Mauli Todo Manage App !! ✨

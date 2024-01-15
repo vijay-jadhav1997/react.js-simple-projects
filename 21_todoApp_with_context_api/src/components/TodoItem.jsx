@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTodo } from "../contexts/todoContext";
+import { useTodo } from "../contexts";
 
 function TodoItem({ todo }) {
   const [titleMsg, setTitleMsg] = useState(todo.title);
