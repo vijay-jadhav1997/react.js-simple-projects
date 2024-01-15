@@ -15,27 +15,25 @@ function TodoItem({ todo }) {
     }
   };
 
-  const toggleCompleted = () => {
-    toggleComplete(todo.id);
-  };
-
   return (
     <div
       className={`flex w-full border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300 text-black ${
-        todo.isCompleted ? "bg-[#c6e9a7]" : "bg-[#ccbed7]"
+        todo.isCompleted ? "bg-[#c6e9a7]  " : "bg-[#ccbed7]"
       }`}
     >
       <input
         type="checkbox"
         className="cursor-pointer"
         checked={todo.isCompleted}
-        onChange={toggleCompleted}
+        onChange={() => toggleComplete(todo.id)}
       />
       <input
         type="text"
-        className={`border outline-none w-full bg-transparent rounded-lg ${
-          isTodoEditable ? "border-black/10 px-2" : "border-transparent"
-        }`}
+        className={`border text-lg font-semibold outline-none w-full bg-transparent rounded-lg ${
+          isTodoEditable
+            ? "border-black/20 px-2 font-normal"
+            : "border-transparent"
+        } ${todo.isCompleted ? "text-gray-400 line-through " : ""}`}
         value={titleMsg}
         onChange={(e) => setTitleMsg(e.target.value)}
         readOnly={!isTodoEditable}

@@ -1,2 +1,2 @@
 export { ThemeProvider, themeContext, useTheme } from "./themeContext";
-export { todoContext, TodoProvider, useTodo } from "./themeContext";
+export { todoContext, TodoProvider, useTodo } from "./todoContext";

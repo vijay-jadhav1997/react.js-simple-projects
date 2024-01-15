@@ -22,7 +22,7 @@ const TodoForm = () => {
     >
       <input
         type="text"
-        className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
+        className="w-full dark:bg-white border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
         value={todoTitle}
         onChange={(e) => setTodoTitle(e.target.value)}
         placeholder="Enter your todo todoTitle here..."
