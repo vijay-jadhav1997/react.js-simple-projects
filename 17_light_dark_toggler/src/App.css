@@ -87,6 +87,8 @@ body {
   right: 5%;
   top: 110px;
 }
+
+
 .btnContainer .darkMode {
   padding: 5px 10px;
   width: max-content;
@@ -114,7 +116,12 @@ body {
   font-size: small;
   text-align: center;
   padding: 2px 0 0;
+  transition: left 0.25s ease-in-out;
 }
+.btnContainer .toggleBtn:hover {
+  box-shadow: 0 0 10px 1px goldenrod, 0 0 10px 1px #ede3c9;
+}
+
 
 .body {
   box-shadow: 0 0 10px var(--boxShadow-clr);

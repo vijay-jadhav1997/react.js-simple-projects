@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useEffect } from "react";
+
 import humidity from "./assets/humidity.png";
 import windy from "./assets/windy.png";
 import search from "./assets/search.png";
@@ -7,8 +10,6 @@ import temperature from "./assets/temperature.png";
 import pressure from "./assets/pressure.png";
 import location from "./assets/location.png";
 import cloudy from "./assets/cloudy.png";
-import { useState } from "react";
-import { useEffect } from "react";
 
 const CityWeather = () => {
   const [cityWeather, setCityWeather] = useState({});
@@ -20,12 +21,12 @@ const CityWeather = () => {
     try {
       const cityData = await fetch(cityUrl);
       const jsonData = await cityData.json();
-      console.log(cityData);
+      // console.log(cityData);
       setCityWeather(jsonData);
-      console.log(jsonData);
+      // console.log(jsonData);
     } catch (error) {
       setSearhcError(error);
-      console.log(error);
+      // console.log(error);
     }
   }
 
@@ -43,7 +44,7 @@ const CityWeather = () => {
   };
 
   // console.log(cityWeather);
-  console.log(cityUrl);
+  // console.log(cityUrl);
   useEffect(() => {
     fetchCityData();
   }, [cityUrl]);
@@ -51,7 +52,7 @@ const CityWeather = () => {
   const { name, sys, weather, wind, main } = cityWeather;
 
   return (
-    <div className="bg-cyan-900 text-white rounded-lg mx-auto mt-10 md:w-max w-[440px] px-5 md:py-10 py-5">
+    <div className="bg-slate-50/10 backdrop-blur-[30px] text-white rounded-lg mx-auto mt-10 md:w-max w-[440px] px-5 md:py-10 py-5">
       <div className="search_bar flex justify-center mx-auto w-[90%] max-w-2xl">
         <input
           type="text"
@@ -82,7 +83,7 @@ const CityWeather = () => {
         ""
       )}
       {
-        <div className="cityWeather md:mt-10 mt-3 flex flex-col md:flex-row items-center">
+        <div className="cityWeather md:mt-10 mt-3 flex flex-col md:flex-row items-center ">
           <div className="weatherBox1 pb-5 mb-2 flex flex-wrap justify-center md:block">
             <div className="cityName flex items-center gap-x-2">
               <img className="w-5 inline" src={location} alt="" />

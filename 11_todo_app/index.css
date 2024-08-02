@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-  height: 100dvh;
-  width: 100vw;
+  min-height: 100dvh;
   background-color: rgb(15, 23, 42);
 }
